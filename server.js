@@ -23,7 +23,7 @@ const options = {
         version: '1.1.0',
       },
     },
-    apis: ['../../apps/SMSreceiver/route.js'], // files containing annotations as above
+    apis: ['./route.js'], // files containing annotations as above
   };  
 const apiSpec = swaggerJsDoc(options);
 
