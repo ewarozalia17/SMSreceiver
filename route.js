@@ -53,6 +53,7 @@ Route.post('/',(req,res)=>{
     console.time(timestamp + "\tSoap API took");
     console.log("url",url)
     console.log("pass",pass)
+    console.error("check how it looks as console error")
     res.send("excellent")
     /*
     //Create promise
