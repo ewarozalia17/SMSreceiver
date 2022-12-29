@@ -4,6 +4,7 @@ const http = require('http');
 const Route =require('./route.js');
 const swaggerJsDoc=require('swagger-jsdoc');
 const OpenApiValidator = require('express-openapi-validator');
+const dateNow=()=>{ return new Date(Date.now()).toISOString().replace(/T/, ' ').replace(/Z/,'')}; //for logs
 
 //Server
 const express = require('express')
@@ -41,6 +42,7 @@ app.use(
 
 // error handler
 app.use((err, req, res, next) => {
+  console.log('\n',dateNow(),`validation error - req.body:${JSON.stringify(req.body)}`);
   // format error
   res.status(err.status || 500).json({
     message: err.message,
